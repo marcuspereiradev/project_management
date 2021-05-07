@@ -60,3 +60,37 @@ body {
     background-color: #1c9271;
   }
 }
+
+.success-message {
+  text-align: center;
+  background: #bff1e3;
+  border: 1px solid #1c9271;
+  padding: 15px 0;
+  color: #137054;
+  margin-bottom: 60px;
+  border-radius: 5px;
+}
+
+.error-message {
+  text-align: center;
+  background: #f1bfbf;
+  border: 1px solid #921c1c;
+  padding: 15px 0;
+  color: #701313;
+  margin-bottom: 60px;
+  border-radius: 5px;
+}
+
+#error_explanation {
+  text-align: center;
+  background: #f1bfbf;
+  border: 1px solid #921c1c;
+  padding: 15px 0;
+  color: #701313;
+  margin-bottom: 60px;
+  border-radius: 5px;
+
+  li {
+    list-style: none;
+  }
+}

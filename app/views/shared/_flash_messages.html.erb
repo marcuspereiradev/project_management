@@ -1,8 +1,12 @@
 <section class="container">
   <% if flash[:success] %>
-    <%= flash[:success] %>
+    <div class="success-message">
+      <%= flash[:success] %>
+    </div>
   <% end %>
   <% if flash[:error] %>
-    <%= flash[:error] %>
+    <div class="error-message">
+      <%= flash[:error] %>
+    </div>
   <% end %>
 </section>
