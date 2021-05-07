@@ -19,7 +19,7 @@
         <td><%= how_many_percent() %></td>
         <td><%= delayed?() %></td>
         <td>
-          <%= link_to  "mode_edit", project_path, class: "material-icons md-light", style: "color: #3774C7", title: "Editar" %>
+          <%= link_to  "mode_edit", edit_project_path, class: "material-icons md-light", style: "color: #3774C7", title: "Editar" %>
           <%= link_to  "delete", project_path, class: "material-icons md-light", style: "color: #A00803", method: :delete, data: { confirm: 'Are you sure?' }, title: "Apagar" %>
         </td>
       </tr>
