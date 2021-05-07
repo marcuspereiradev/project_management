@@ -1,19 +1,16 @@
 class ActivitiesController < ApplicationController
   before_action :set_activity, only: [:edit, :update, :destroy]
 
-  def edit
-    # debugger
-  end
+  def edit;  end
 
   def create
-    @project = Project.find(params[:project_id])
-    @activity = @project.activities.new(activity_params)
+    @activity = Activity.new(activity_params.merge({ project_id: params[:project_id] }))
     if @activity.save
       flash[:success] = "Activity successfully created"
-      redirect_to @project
+      redirect_to @activity.project
     else
       flash[:error] = "Something went wrong"
-      redirect_to @project
+      redirect_to @activity.project
     end
   end
 
@@ -49,7 +46,7 @@ class ActivitiesController < ApplicationController
   private
 
   def activity_params
-    params.require(:activity).permit(:activity_name, :start_date, :end_date)
+    params.require(:activity).permit(:activity_name, :start_date, :end_date, :project_id)
   end
 
   def set_activity
