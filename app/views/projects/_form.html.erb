@@ -1,0 +1,20 @@
+<%= form_with(model: project) do |form| %>
+  <%= render 'shared/form_erros', form: form %>
+  <div class="field">
+    <%= form.label "Nome do Projeto" %>
+    <%= form.text_field :project_name %>
+  </div>
+  <div class="date-field">
+    <div class="field">
+      <%= form.label "Início" %>
+      <%= form.datetime_select :start_date %>
+    </div>
+    <div class="field">
+      <%= form.label "Fim" %>
+      <%= form.datetime_select :end_date %>
+    </div>
+  </div>
+  <div class="actions">
+    <%= form.submit "Criar Projeto"%>
+  </div>
+<% end %>

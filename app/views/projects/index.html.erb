@@ -1,0 +1,15 @@
+<section class="container">
+  <% if @projects.exists? %>
+    <% @projects.each do |project| %>
+      <div class="projects-content">
+        <%= link_to  "#{project.project_name}", project_path(project.id), class: "title" %>
+        <p>Criado em <%= project.created_at_formated %></p>
+        <%= link_to  "Atividades", project_path(project.id), class: "btn-light" %>
+      </div>
+    <% end %>
+  <% else %>
+    <div class="projects-content">
+      <p class="projects-empty">Parece que você não tem nenhum projeto. Clique <%= link_to  "aqui", new_project_path %> para criar.</p>
+    </div>
+  <% end %>
+</section>

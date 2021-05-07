@@ -1,0 +1,65 @@
+<section class="container">
+  <div class="show-content">
+    <h2><%= @project.project_name %></h2>
+    <table class="show-table">
+      <tr>
+        <th>ID do projeto</th>
+        <th>Nome do projeto</th>
+        <th>Data de início</th>
+        <th>Data do fim</th>
+        <th>Quantos % completo</th>
+        <th>Atrasado</th>
+        <th>Ação</th>
+      </tr>
+      <tr>
+        <td><%= @project.id %></td>
+        <td><%= @project.project_name %></td>
+        <td><%= @project.start_date_formated %></td>
+        <td><%= @project.end_date_formated %></td>
+        <td><%= how_many_percent() %></td>
+        <td><%= delayed?() %></td>
+        <td>
+          <%= link_to  "mode_edit", project_path, class: "material-icons md-light", style: "color: #3774C7", title: "Editar" %>
+          <%= link_to  "delete", project_path, class: "material-icons md-light", style: "color: #A00803", method: :delete, data: { confirm: 'Are you sure?' }, title: "Apagar" %>
+        </td>
+      </tr>
+    </table>
+    <% if !@project.activities.empty? %>
+      <h2>Atividades</h2>
+      <table class="show-table">
+        <tr>
+          <th>ID da atividade</th>
+          <th>ID do projeto</th>
+          <th>Nome da atividade</th>
+          <th>Data de início</th>
+          <th>Data do fim</th>
+          <th>Finalizada?</th>
+          <th>Ação</th>
+        </tr>
+        <% @project.activities.order(end_date: :asc).each do |activity| %>
+          <tr>
+            <td><%= activity.id %></td>
+            <td><%= activity.project_id %></td>
+            <td><%= activity.activity_name %></td>
+            <td><%= activity.start_date_formated %></td>
+            <td><%= activity.end_date_formated %></td>
+            <td><%= activity.finished ? "Sim" : "Não" %></td>
+            <td>
+              <span class="material-icons md-light" style="color: #3774C7">mode_edit</span>
+              <% if activity.finished == false %>
+                <%= link_to  "done", finished_path(activity), class: "material-icons md-light", style: "color: #1c9271", title: "Finalizar" %>
+              <% else %>
+                <%= link_to  "task_alt", finished_path(activity), class: "material-icons md-light", style: "color: #1c9271", title: "Finalizado" %>
+              <% end %>
+              <%= link_to  "delete", project_activity_path(activity), class: "material-icons md-light", style: "color: #A00803", method: :delete, data: { confirm: 'Are you sure?' }, title: "Apagar" %>
+            </td>
+          </tr>
+        <% end %>
+      </table>
+    <% end %>
+    <h2>Nova atividade</h2>
+    <div class="activity-content">
+      <%= render partial: 'activities/activity', locals: { project: @project } %>
+    </div>
+  </div>
+</section>
