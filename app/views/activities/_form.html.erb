@@ -1,7 +1,7 @@
-<%= form_for ([project, Activity.new]) do |form| %>
+<%= form_with(model: activity) do |form| %>
   <%= render 'shared/form_errors', form: form %>
   <div class="field">
-    <%= form.label "Nome da Atividade" %>
+    <%= form.label "Nome do Projeto" %>
     <%= form.text_field :activity_name %>
   </div>
   <div class="date-field">
@@ -15,6 +15,6 @@
     </div>
   </div>
   <div class="actions">
-    <%= form.submit "Criar Atividade"%>
+    <%= form.submit %>
   </div>
 <% end %>
