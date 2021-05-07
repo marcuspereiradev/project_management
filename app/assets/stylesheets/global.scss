@@ -42,3 +42,21 @@ body {
     border-color: #1c9271;
   }
 }
+
+.actions input {
+  border: 1px solid #1c9271;
+  padding: 10px 0;
+  border-radius: 5px;
+  background-color: transparent;
+  text-decoration: none;
+  color: #1c9271;
+  transition: .3s ease;
+  display: inline-block;
+  cursor: pointer;
+  width: 100%;
+
+  &:hover {
+    color: #fafafa;
+    background-color: #1c9271;
+  }
+}

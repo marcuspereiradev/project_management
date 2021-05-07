@@ -1,0 +1,62 @@
+// Place all the styles related to the activities controller here.
+// They will automatically be included in application.css.
+// You can use Sass (SCSS) here: https://sass-lang.com/
+
+.activity-content {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  margin-bottom: 30px;
+
+  h2 {
+    margin-bottom: 30px;
+  }
+
+  form {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+
+    .field {
+      margin-bottom: 20px;
+
+      label {
+        display: block;
+        margin-bottom: 5px;
+      }
+
+      input {
+        padding: 10px;
+        border: 1px solid #888888;
+        border-radius: 5px;
+        width: 100%;
+        background-color: transparent;
+      }
+
+      select {
+        border: 1px solid #888888;
+        background: none;
+        border-radius: 5px;
+        padding: 5px 10px;
+      }
+    }
+
+    .date-field {
+      display: flex;
+      justify-content: space-between;
+      flex-wrap: wrap;
+
+      .field {
+        border: 1px solid #888888;
+        padding: 10px;
+        border-radius: 5px;
+        width: calc(50% - 10px);
+      }
+    }
+
+    .actions {
+      width: calc(50% - 10px);
+    }
+  }
+}
