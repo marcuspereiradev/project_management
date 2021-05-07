@@ -1,3 +1,7 @@
 Rails.application.routes.draw do
-  # For details on the DSL available within this file, see https://guides.rubyonrails.org/routing.html
+  resources :projects do
+    resources :activities
+  end
+  get "finished/:project_id/:id", to: "activities#finished", as: :finished
+  root 'projects#index'
 end
