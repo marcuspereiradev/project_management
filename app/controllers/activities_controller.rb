@@ -1,5 +1,8 @@
 class ActivitiesController < ApplicationController
   before_action :set_activity, only: [:edit, :update, :destroy, :finished?]
+  def index
+    redirect_to project_path(id: params[:project_id])
+  end
 
   def edit;  end
 
@@ -9,8 +12,8 @@ class ActivitiesController < ApplicationController
       flash[:success] = "Activity successfully created"
       redirect_to @activity.project
     else
-      flash[:error] = "Something went wrong"
-      redirect_to @activity.project
+      @project = @activity.project
+      render "/projects/show"
     end
   end
 

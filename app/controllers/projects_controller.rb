@@ -5,7 +5,9 @@ class ProjectsController < ApplicationController
     @projects = Project.all
   end
 
-  def show; end
+  def show
+    @activity = Activity.new
+  end
 
   def new
     @project = Project.new
@@ -20,7 +22,6 @@ class ProjectsController < ApplicationController
       flash[:success] = "Project successfully created"
       redirect_to @project
     else
-      flash[:error] = "Something went wrong"
       render 'new'
     end
   end
@@ -30,7 +31,6 @@ class ProjectsController < ApplicationController
       flash[:success] = "Project was successfully updated"
       redirect_to @project
     else
-      flash[:error] = "Something went wrong"
       render 'edit'
     end
   end
