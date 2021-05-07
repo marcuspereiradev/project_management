@@ -45,13 +45,13 @@
             <td><%= activity.end_date_formated %></td>
             <td><%= activity.finished ? "Sim" : "Não" %></td>
             <td>
-              <span class="material-icons md-light" style="color: #3774C7">mode_edit</span>
+              <%= link_to  "mode_edit", edit_activity_path(activity), class:"material-icons md-light", style:"color: #3774C7", title: "Editar" %>
               <% if activity.finished == false %>
                 <%= link_to  "done", finished_path(activity), class: "material-icons md-light", style: "color: #1c9271", title: "Finalizar" %>
               <% else %>
                 <%= link_to  "task_alt", finished_path(activity), class: "material-icons md-light", style: "color: #1c9271", title: "Finalizado" %>
               <% end %>
-              <%= link_to  "delete", project_activity_path(activity), class: "material-icons md-light", style: "color: #A00803", method: :delete, data: { confirm: 'Are you sure?' }, title: "Apagar" %>
+              <%= link_to  "delete", activity_path(activity), class: "material-icons md-light", style: "color: #A00803", method: :delete, data: { confirm: 'Are you sure?' }, title: "Apagar" %>
             </td>
           </tr>
         <% end %>

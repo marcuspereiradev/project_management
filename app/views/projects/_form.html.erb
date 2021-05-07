@@ -1,5 +1,5 @@
 <%= form_with(model: project) do |form| %>
-  <%= render 'shared/form_erros', form: form %>
+  <%= render 'shared/form_errors', form: form %>
   <div class="field">
     <%= form.label "Nome do Projeto" %>
     <%= form.text_field :project_name %>
