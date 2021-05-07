@@ -4,7 +4,7 @@ Rails.application.routes.draw do
     resources :activities
   end
 
-  get "finished/:project_id/:id", to: "activities#finished", as: :finished
+  get "finished/:id", to: "activities#finished?", as: :finished
 
   root 'projects#index'
 end

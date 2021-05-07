@@ -1,5 +1,5 @@
 class ActivitiesController < ApplicationController
-  before_action :set_activity, only: [:edit, :update, :destroy]
+  before_action :set_activity, only: [:edit, :update, :destroy, :finished?]
 
   def edit;  end
 
@@ -35,12 +35,10 @@ class ActivitiesController < ApplicationController
   end
 
 
-  def finished
-    @project = Project.find(params[:id])
-    @activity = @project.activities.find(params[:project_id])
+  def finished?
     @activity.finished = !@activity.finished
     @activity.save
-    redirect_to @project
+    redirect_to @activity.project
   end
 
   private

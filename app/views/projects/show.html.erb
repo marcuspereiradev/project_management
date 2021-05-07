@@ -43,7 +43,7 @@
             <td><%= activity.activity_name %></td>
             <td><%= activity.start_date_formated %></td>
             <td><%= activity.end_date_formated %></td>
-            <td><%= activity.finished ? "Sim" : "Não" %></td>
+            <td><%= activity.finished? ? "Sim" : "Não" %></td>
             <td>
               <%= link_to  "mode_edit", edit_activity_path(activity), class:"material-icons md-light", style:"color: #3774C7", title: "Editar" %>
               <% if activity.finished == false %>
