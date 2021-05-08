@@ -22,7 +22,6 @@ class ActivitiesController < ApplicationController
         flash[:success] = "Activity was successfully updated"
         redirect_to @activity.project
       else
-        flash[:error] = "Something went wrong"
         render 'edit'
       end
   end
@@ -32,7 +31,6 @@ class ActivitiesController < ApplicationController
       flash[:success] = 'Activity was successfully deleted.'
       redirect_to @activity.project
     else
-      flash[:error] = 'Something went wrong'
       redirect_to @activity.project
     end
   end
