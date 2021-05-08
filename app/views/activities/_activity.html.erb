@@ -1,4 +1,4 @@
-<%= form_for ([project, activity]) do |form| %>
+<%= form_with(model: activity) do |form| %>
   <%= render 'shared/form_errors', form: form %>
   <div class="field">
     <%= form.label "Nome da Atividade" %>
@@ -14,6 +14,7 @@
       <%= form.datetime_select :end_date %>
     </div>
   </div>
+  <%= form.hidden_field :project_id, value: project.id %>
   <div class="actions">
     <%= form.submit "Criar Atividade"%>
   </div>

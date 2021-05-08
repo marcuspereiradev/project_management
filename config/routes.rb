@@ -1,8 +1,6 @@
 Rails.application.routes.draw do
   resources :activities
-  resources :projects do
-    resources :activities
-  end
+  resources :projects
 
   get "finished/:id", to: "activities#finished?", as: :finished
 

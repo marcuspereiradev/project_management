@@ -7,7 +7,7 @@ class ActivitiesController < ApplicationController
   def edit;  end
 
   def create
-    @activity = Activity.new(activity_params.merge({ project_id: params[:project_id] }))
+    @activity = Activity.new(activity_params)
     if @activity.save
       flash[:success] = "Activity successfully created"
       redirect_to @activity.project
