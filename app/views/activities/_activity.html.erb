@@ -2,7 +2,7 @@
   <%= render 'shared/form_errors', form: form %>
   <div class="field">
     <%= form.label "Nome da Atividade" %>
-    <%= form.text_field :activity_name %>
+    <%= form.text_field :activity_name, autocomplete: :off %>
   </div>
   <div class="date-field">
     <div class="field">
