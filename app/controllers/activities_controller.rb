@@ -9,7 +9,7 @@ class ActivitiesController < ApplicationController
   def create
     @activity = Activity.new(activity_params)
     if @activity.save
-      flash[:success] = "Activity successfully created"
+      flash.now[:success] = "Activity successfully created"
       redirect_to @activity.project
     else
       @project = @activity.project
@@ -19,7 +19,7 @@ class ActivitiesController < ApplicationController
 
   def update
       if @activity.update(activity_params)
-        flash[:success] = "Activity was successfully updated"
+        flash.now[:success] = "Activity was successfully updated"
         redirect_to @activity.project
       else
         render 'edit'
@@ -28,7 +28,7 @@ class ActivitiesController < ApplicationController
 
   def destroy
     if @activity.destroy
-      flash[:success] = 'Activity was successfully deleted.'
+      flash.now[:success] = 'Activity was successfully deleted.'
       redirect_to @activity.project
     else
       redirect_to @activity.project
