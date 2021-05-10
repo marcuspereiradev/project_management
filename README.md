@@ -23,6 +23,8 @@
 * Register projects for better monitoring
 * Register activities for the projects created to check what should be done
 * Inform whether there will be delays or not.
+* You can see this project on [Heroku](https://www.heroku.com) [checking here](https://project-management-ror.herokuapp.com/)
+* User registration soon
 
 </br>
 
