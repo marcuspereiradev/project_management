@@ -20,9 +20,9 @@ RSpec.describe Project, type: :model do
 
       project.valid?
 
-      expect(project.errors[:project_name]).to include("can't be blank")
-      expect(project.errors[:start_date]).to include("can't be blank")
-      expect(project.errors[:end_date]).to include("can't be blank")
+      expect(project.errors[:project_name]).to include("não pode ficar em branco")
+      expect(project.errors[:start_date]).to include("não pode ficar em branco")
+      expect(project.errors[:end_date]).to include("não pode ficar em branco")
     end
 
     it "should be valid with valid attributes" do

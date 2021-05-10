@@ -22,10 +22,10 @@ RSpec.describe Activity, type: :model do
 
     activity.valid?
 
-    expect(activity.errors[:activity_name]).to include("can't be blank")
-    expect(activity.errors[:start_date]).to include("can't be blank")
-    expect(activity.errors[:end_date]).to include("can't be blank")
-    expect(activity.errors[:project_id]).to include("can't be blank")
+    expect(activity.errors[:activity_name]).to include("não pode ficar em branco")
+    expect(activity.errors[:start_date]).to include("não pode ficar em branco")
+    expect(activity.errors[:end_date]).to include("não pode ficar em branco")
+    expect(activity.errors[:project_id]).to include("não pode ficar em branco")
   end
 
   it "should be valid with valid attributes" do
