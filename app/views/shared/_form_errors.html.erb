@@ -3,7 +3,6 @@
     <h2><%= pluralize(form.object.errors.count, "error") %> proibiu este projeto de ser salvo:</h2>
     <ul>
       <% form.object.errors.each do |error| %>
-        <%debugger%>
         <li><%= error.full_message %></li>
       <% end %>
     </ul>
